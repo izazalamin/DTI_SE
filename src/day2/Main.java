@@ -2,14 +2,28 @@ package day2;
 
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Soal 1: Fahrenheit ke Celsius
+        double fahrenheit = 100;
+        double celsius = FahrenheitToCelsius.convert(fahrenheit);
+        System.out.println(fahrenheit + "°F = " + celsius + "°C");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Soal 2: Centimeter ke Kilometer
+        double centimeter = 100000;
+        String kilometer = CentimeterToKilometer.convert(centimeter);
+        System.out.println(centimeter + " cm = " + kilometer);
+
+        // Soal 3: Ganjil atau Genap
+        int number = 15;
+        System.out.println(number + " adalah bilangan " + (OddOrEven.isOdd(number) ? "ganjil" : "genap"));
+
+        // Soal 4: Hapus Substring
+        String str = "Hello world";
+        String sub = "ell";
+        String result = RemoveSubstring.remove(str, sub);
+        System.out.println("Hasil: " + result);
+
+        // Soal 5: Palindrome
+        String palindrome = "madam";
+        System.out.println(palindrome + " adalah palindrome: " + PalindromeChecker.isPalindrome(palindrome));
     }
 }
