@@ -1,29 +1,66 @@
 package day2;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Soal 1: Fahrenheit ke Celsius
-        double fahrenheit = 100;
-        double celsius = FahrenheitToCelsius.convert(fahrenheit);
-        System.out.println(fahrenheit + "°F = " + celsius + "°C");
+        Scanner scanner = new Scanner(System.in); //type scanner
 
-        // Soal 2: Centimeter ke Kilometer
-        double centimeter = 100000;
-        String kilometer = CentimeterToKilometer.convert(centimeter);
-        System.out.println(centimeter + " cm = " + kilometer);
+        // Menu
+        System.out.println("Choose Exercise:");
+        System.out.println("1. Temperature Converter");
+        System.out.println("2. CM to KM");
+        System.out.println("3. Odd or Even");
+        System.out.println("4. Removing Substring");
+        System.out.println("5. Palindrom Checker");
+        System.out.print("Choose your exercise: ");
+        int option = scanner.nextInt();
 
-        // Soal 3: Ganjil atau Genap
-        int number = 15;
-        System.out.println(number + " adalah bilangan " + (OddOrEven.isOdd(number) ? "ganjil" : "genap"));
+        switch (option) {
+            case 1:
+                TemperatureConverter converter = new TemperatureConverter();
+                System.out.print("input Fahrenheit: ");
+                double fahrenheit = scanner.nextDouble();
+                double celsius = converter.fahrenheitToCelsius(fahrenheit);
+                System.out.println("from : " + fahrenheit + "to : " + celsius);
+                break;
+            case 2:
+                DistanceConverter distanceConverter = new DistanceConverter();
+                System.out.print("Input centimeter: ");
+                double cm = scanner.nextDouble();
+                double km = distanceConverter.cmToKm(cm);
+                System.out.println("from : " + cm + " to : " + km + " km");
+                break;
+            case 3:
+                NumberChecker checker = new NumberChecker();
+                System.out.print("input Number : ");
+                int number = scanner.nextInt();
+                boolean isEven = checker.isEven(number);
+                System.out.println(isEven);
+                break;
+            case 4:
+                System.out.print("Input Sentence : ");
+                scanner.nextLine(); // buang karakter new line
+                String str = scanner.nextLine();
+                System.out.print("Removing Substring: ");
+                String sub = scanner.nextLine();
 
-        // Soal 4: Hapus Substring
-        String str = "Hello world";
-        String sub = "ell";
-        String result = RemoveSubstring.remove(str, sub);
-        System.out.println("Hasil: " + result);
+                StringManipulator manipulator = new StringManipulator();
 
-        // Soal 5: Palindrome
-        String palindrome = "madam";
-        System.out.println(palindrome + " adalah palindrome: " + PalindromeChecker.isPalindrome(palindrome));
+                // Panggil fungsi untuk menghapus substring
+                String result = manipulator.removeSubstring(str,sub);
+                System.out.println("Result : " + result);
+                break;
+            case 5:
+                PalindromeChecker palindromeChecker = new PalindromeChecker();
+                System.out.print("Input Sentence : ");
+                scanner.nextLine();
+                String sentence = scanner.nextLine();
+                boolean isPalindrome = palindromeChecker.isPalindrome(sentence.toLowerCase());
+                System.out.println(sentence + " is " + (isPalindrome ? "palindrome" : "not palindrome"));
+                break;
+            default:
+                System.out.println("Invalid Option");
+        }
     }
 }
