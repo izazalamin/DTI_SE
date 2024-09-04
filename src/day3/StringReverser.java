@@ -7,7 +7,7 @@ public class StringReverser {
         int right = charArray.length - 1;
 
         while (left < right) {
-            // Tukar karakter di indeks left dan right
+            // swap index right to left
             char temp = charArray[left];
             charArray[left] = charArray[right];
             charArray[right] = temp;
