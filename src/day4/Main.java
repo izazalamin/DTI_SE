@@ -11,7 +11,7 @@ public class Main {
         System.out.println("2. stars");
         System.out.println("3. Y/N");
         System.out.println("4. Guessing Game");
-        System.out.println("5. ");
+        System.out.println("5. Upper - Lower String");
         System.out.print("Choose your exercise: ");
         int option = scanner.nextInt();
 
@@ -44,8 +44,8 @@ public class Main {
                 System.out.print("Input sentence: ");
                 String word = scanner.nextLine();
 
-                StringProcessor processor = new StringProcessor();
-                String result = processor.swapCase(word);
+                StringUpperlower upperlower = new StringUpperlower(); // Asumsikan kelas ini ada dalam paket yang sama atau sudah di-import
+                String result = upperlower.swapCase(word);
 
                 System.out.println("Hasil: " + result);
             default:

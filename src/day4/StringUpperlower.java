@@ -1,6 +1,7 @@
 package day4;
 
-public class StringProcessor {
+
+public class StringUpperlower {
     public String swapCase(String str) {
         char[] charArray = str.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
