@@ -79,6 +79,7 @@ public class Main {
             System.out.print(bil + " ");}
 
         //no 7
+
         System.out.print("Question 7 : Total Vowels on sentence ");
         System.out.print("Input a sentence: ");
         scanner.nextLine();
@@ -94,7 +95,7 @@ public class Main {
             System.out.print("Input Array digit: ");
             int y = scanner.nextInt();
 
-            int[] ar = new int[n]; // Remove the extra semicolon
+            int[] ar = new int[n];
 
             System.out.println("input Array Element:");
             for (int i = 0; i < y; i++) {
@@ -113,6 +114,7 @@ public class Main {
             AnagramChecker checker = new AnagramChecker();
 
             System.out.print("Input First String: ");
+            scanner.nextLine();
             String str1 = scanner.nextLine();
             System.out.print("Input Second String: ");
             String str2 = scanner.nextLine();
