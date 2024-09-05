@@ -9,8 +9,8 @@ public class Main {
         System.out.println("Choose Exercise:");
         System.out.println("1. Table");
         System.out.println("2. stars");
-        System.out.println("3. ");
-        System.out.println("4. ");
+        System.out.println("3. Y/N");
+        System.out.println("4. Guessing Game");
         System.out.println("5. ");
         System.out.print("Choose your exercise: ");
         int option = scanner.nextInt();
@@ -32,6 +32,22 @@ public class Main {
                 Pattern pattern = new Pattern();
                 pattern.printPattern(star);
                 break;
+            case 3 :
+                InputProcessor processor = new InputProcessor();
+                processor.processInput();
+                break;
+            case 4 :
+                GuessingGame game = new GuessingGame();
+                game.play();
+                break;
+            case 5 :
+                System.out.print("Input sentence: ");
+                String word = scanner.nextLine();
+
+                StringProcessor processor = new StringProcessor();
+                String result = processor.swapCase(word);
+
+                System.out.println("Hasil: " + result);
             default:
                 System.out.println("Invalid Option");
 
