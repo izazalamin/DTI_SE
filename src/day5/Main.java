@@ -68,12 +68,6 @@ public class Main {
                 FizzBuzz fizzBuzz = new FizzBuzz();
                 fizzBuzz.fizzBuzz(n);
                 break;
-            case 5 :
-                System.out.print("Enter the value of n: ");
-                int[] x = scanner.nextInt();
-                TwoSum sum = new TwoSum();
-                sum.twoSum(x);
-                break;
         }
     }
 }
